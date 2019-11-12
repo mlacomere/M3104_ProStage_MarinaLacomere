@@ -31,4 +31,11 @@ class ProStageController extends AbstractController
     {
         return new Response ("<H1>Cette page affichera la liste des entreprises proposant un stage</H1>");
     }
+    /**
+     * @Route("/formations", name="proStage_formations")
+     */
+    public function messageFormations()
+    {
+        return new Response ("<H1>Cette page affichera la liste des formationsde l'IUT</H1>");
+    }
 }
