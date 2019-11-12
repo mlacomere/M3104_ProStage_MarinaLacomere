@@ -24,4 +24,11 @@ class ProStageController extends AbstractController
     {
         return new Response ("<H1>Bienvenue sur la page d'accueil de ProStage </H1>");
     }
+    /**
+     * @Route("/entreprises", name="proStage_entreprise")
+     */
+    public function messageEntreprises()
+    {
+        return new Response ("<H1>Cette page affichera la liste des entreprises proposant un stage</H1>");
+    }
 }
