@@ -1,3 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block contenu %}<H1>Cette page affichera le descriptif du stage ayant pour identifiant {{id}}</H1>{% endblock %}
+{% block titre %}<H1> Stage  {{id}} </H1>{% endblock %}
+
+{% block contenu %}
+    <H2> Intitulé du stage : Nom du stage {{id}}<H2>
+    <p>Ce texte contiendra le descriptif de l'antreprise</p>
+    <p>Ce texte contiendra le descriptif de la mission</p>
+    <p>Ce texte contiendra la formation exigée</p>
+{% endblock %}
