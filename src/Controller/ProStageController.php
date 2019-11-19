@@ -22,7 +22,7 @@ class ProStageController extends AbstractController
      */
     public function messageBienvenue()
     {
-        return new Response ("<H1>Bienvenue sur la page d'accueil de ProStage </H1>");
+        return $this->render('pro_stage/accueil.html.twig');
     }
     /**
      * @Route("/entreprises", name="proStage_entreprise")
