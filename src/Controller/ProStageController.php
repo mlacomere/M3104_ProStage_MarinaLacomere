@@ -9,15 +9,6 @@ use Symfony\Component\HttpFoundation\Response;
 class ProStageController extends AbstractController
 {
     /**
-     * @Route("/pro/stage", name="pro_stage")
-     */
-    public function index()
-    {
-        return $this->render('pro_stage/index.html.twig', [
-            'controller_name' => 'ProStageController',
-        ]);
-    }
-    /**
      * @Route("/", name="proStage_accueil")
      */
     public function messageBienvenue()
@@ -29,7 +20,7 @@ class ProStageController extends AbstractController
      */
     public function messageEntreprises()
     {
-        return new Response ("<H1>Cette page affichera la liste des entreprises proposant un stage</H1>");
+        return $this->render('pro_stage/entreprises.html.twig');
     }
     /**
      * @Route("/formations", name="proStage_formations")
