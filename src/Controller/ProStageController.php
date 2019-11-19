@@ -27,7 +27,7 @@ class ProStageController extends AbstractController
      */
     public function messageFormations()
     {
-        return new Response ("<H1>Cette page affichera la liste des formationsde l'IUT</H1>");
+        return $this->render('pro_stage/formations.html.twig');
     }
     /**
      * @Route("/stage/{id}", name="proStage_stage")
