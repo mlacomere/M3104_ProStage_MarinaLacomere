@@ -6,10 +6,15 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block menu %}{% endblock %}
+        {% block menu %} 
+            <a href="/"> Accueil </a> 
+            <a href="/formations"> Formations </a> 
+            <a href="/entreprises"> Entreprises </a> 
+            <a href="/stages"> Tous les stages </a> 
+        {% endblock %}
         {% block titre %}{% endblock %}
         {% block contenu %}{% endblock %}
-        {% block footer %}{% endblock %}
+        {% block footer %} Mon footer {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
