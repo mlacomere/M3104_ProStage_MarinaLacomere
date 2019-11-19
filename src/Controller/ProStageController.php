@@ -34,6 +34,6 @@ class ProStageController extends AbstractController
      */
     public function messageStage($id)
     {
-        return new Response ("<H1>Cette page affichera le descriptif du stage ayant pour identifiant $id</H1>");
+        return $this->render('pro_stage/stage.html.twig',['id'=>$id]);
     }
 }
