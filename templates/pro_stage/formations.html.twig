@@ -1,4 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block titre %}<H1>Ma formation</H1>{% endblock %}
-{% block contenu %}<p>Ce bloc contiendra la liste des formations disponibles</p>{% endblock %}
+{% block contenu %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <a href="/stages"><img src="/img/bulleInfo.png" width=50%></a>
+        </div>
+        <div class="col-md-4">
+            <a href="/stages"><img src="/img/bulleLicencePro.png" width=50%></a>
+        </div>
+        <div class="col-md-4">
+            <a href="/stages"><img src="/img/bulleDUT.png" width=50%></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
