@@ -16,9 +16,9 @@
         {% block menu %}
         <div class="row">
             <div class="col-md-12">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <ul class="nav nav-tabs justify-content-end" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link"  href="/">Accueil</a>
+                        <a class="nav-link" href="/">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/formations"> Formations</a>
@@ -33,12 +33,14 @@
             </div>
         </div>
         {% endblock %}
-        {% block titre %}
-        <div class="row">
-            <div class="col-md-12">
+        <blockquote class="blockquote text-center">
+            {% block titre %}
+            <div class="row">
+                <div class="col-md-12">
+                </div>
             </div>
-        </div>
-        {% endblock %}
+            {% endblock %}
+        </blockquote>
         {% block contenu %}
         <div class="row">
             <div class="col-md-12">
@@ -48,7 +50,7 @@
         {% block footer %}
         <div class="row">
             <div class="col-md-12">
-                Mon footer
+                <p>Site web réalisé avec les frameworks Symfony et Bootstrap. Images libres de droit Pixabay.com.</p>
             </div>
         </div>
         {% endblock %}
