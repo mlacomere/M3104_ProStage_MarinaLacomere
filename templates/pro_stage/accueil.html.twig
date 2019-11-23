@@ -3,3 +3,20 @@
 {% block titre %} 
         <H1>Bienvenue sur la page d'accueil de ProStage </H1>
 {% endblock %}
+
+
+{% block contenu %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 offset-1" style="margin-top:150px;">
+            <a href="/stages"><img src="/img/bulleStages.png" width=75%></a>
+        </div>
+        <div class="col-md-3 offset-1" style="margin-top:150px;">
+            <a href="/formations"><img src="/img/bulleForm.png" width=75%></a>
+        </div>
+        <div class="col-md-3 offset-1" style="margin-top:150px;">
+            <a href="/entreprises"><img src="/img/bulleEnt.png" width=75%></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
