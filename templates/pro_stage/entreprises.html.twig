@@ -2,4 +2,49 @@
 
 
 {% block titre %}<H1>Entreprises ayant proposées un stage</H1>{% endblock %}
-{% block contenu %}<p>Ce bloc contiendra la liste des entreprises ayant proposé un stage</p>{% endblock %}
+{% block contenu %}
+<div class="card border-info mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="/img/ent1.png"  width=25% margin-left="25px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Entreprise X</h5>
+        <p class="card-text">SAS multimédia</p>
+        <a href="/stages" class="btn btn-primary">Consulter les offres</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card border-info mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="/img/ent2.png"  width=25% margin-left="25px">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Entreprise Y</h5>
+              <p class="card-text">SARL Communication</p>
+              <a href="/stages" class="btn btn-primary">Consulter les offres</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card border-info mb-3">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="/img/ent3.png"  width=25% margin-left="25px">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Entreprise z</h5>
+                  <p class="card-text">Editeur de logiciel</p>
+                  <a href="/stages" class="btn btn-primary">Consulter les offres</a>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}
