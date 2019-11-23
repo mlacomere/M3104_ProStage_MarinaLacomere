@@ -33,40 +33,52 @@
             </div>
         </div>
         {% endblock %}
+
         <blockquote class="blockquote text-center">
-            {% block titre %}
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" style="margin-top:100px;">
+                    {% block titre %}{% endblock %}
                 </div>
             </div>
-            {% endblock %}
         </blockquote>
-        {% block contenu %}
+
         <div class="row">
             <div class="col-md-12">
+                {% block contenu %}{% endblock %}
             </div>
         </div>
-        {% endblock %}
+
         <blockquote class="blockquote text-center">
-        {% block footer %}
-        <div class="row">
-            <div class="col-md-12">
-                <p>Site web réalisé avec les frameworks Symfony et Bootstrap. Images libres de droit Pixabay.com.</p>
+            {% block footer %}
+            <div class="row" style="margin-top:200px;">
+                <div class="col-md-12">
+                    <p class="text-secondary">
+                        Site réalisé avec les frameworks
+                        <a href="https://symfony.com/">Symfony</a>
+                        et
+                        <a href="https://getbootstrap.com/">Bootstrap</a>.
+                        Images libres de droit en provenance de
+                        <a href="https://www.pexels.com/">pexels.com</a>
+                        et
+                        <a href="https://pixabay.com/fr/">pixabay.com</a>.
+                    </p>
+                </div>
             </div>
-        </div>
-        {% endblock %}
-        </blockquote>
-        {% block javascripts %}
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="{{asset('/js/bootstrap.min.js')}}"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-        {% endblock %}
+    </div>
+    {% endblock %}
+    </blockquote>
+
+    {% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="{{asset('/js/bootstrap.min.js')}}"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    {% endblock %}
     </div>
 </body>
 
