@@ -1,10 +1,65 @@
 {% extends 'base.html.twig' %}
 
-{% block titre %}<H1> Stage  {{id}} </H1>{% endblock %}
+{% block titre %}<H1> Stage {{id}} </H1>{% endblock %}
 
 {% block contenu %}
-    <H2> Intitulé du stage : Nom du stage {{id}}<H2>
-    <p>Ce texte contiendra le descriptif de l'antreprise</p>
-    <p>Ce texte contiendra le descriptif de la mission</p>
-    <p>Ce texte contiendra la formation exigée</p>
+<blockquote class="blockquote text-center">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Intitulé : Titre du stage {{id}}</h3>
+        </div>
+    </div>
+</blockquote>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card" style="width: 29rem;">
+            <img src="/img/ent1.png" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Nom de l'entreprise</h5>
+                <p class="card-text">Description de l'entreprise</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Adresse de l'entreprise</li>
+                <li class="list-group-item">Nom de la personne à contacter</li>
+                <li class="list-group-item">personneAContacter@sonadresse.fr</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4" style="margin-top:100px;">
+        <div class="card" style="width: 29rem;">
+            <div class="row">
+                <div class="col-md-4"><img src="/img/cible.png" class="card-img-top" width=25%></div>
+                <div class="col-md-8" style="margin-top:40px;">
+                    <h3>La Mission:</h3>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Description de la mission au sein de l'entreprise<br />Excogitatum est super his,
+                    ut homines quidam ignoti,
+                    vilitate ipsa parum cavendi ad colligendos rumores per Antiochiae latera cuncta destinarentur
+                    relaturi quae audirent. hi peragranter
+                    et dissimulanter honoratorum circulis adsistendo pervadendoque divites domus egentium habitu
+                    quicquid noscere poterant vel audire latenter
+                    intromissi per posticas in regiam nuntiabant, id observantes conspiratione concordi, ut fingerent
+                    quaedam et cognita duplicarent in peius,
+                    laudes vero supprimerent Caesaris, quas invitis conpluribus formido malorum inpendentium exprimebat.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-6"  style="margin-top:100px;">
+                <h3> Formation exigée : </h3>
+            </div>
+            <div class="col-md-6">
+                <img src="/img/bulleDUT.png" class="card-img-bottom" width=25%>
+            </div>
+            <div class="col-md-2 offset-md-10" style="margin-top:100px;">
+                    <a href="/stages"><img src="/img/fleche.png" width=20%>Retour</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
