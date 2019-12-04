@@ -19,22 +19,22 @@ class Entreprise
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $Nom;
+    private $nom;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $Description;
+    private $description;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Adresse;
+    private $adresse;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $SiteWeb;
+    private $siteWeb;
 
     public function getId(): ?int
     {
@@ -43,48 +43,48 @@ class Entreprise
 
     public function getNom(): ?string
     {
-        return $this->Nom;
+        return $this->nom;
     }
 
-    public function setNom(string $Nom): self
+    public function setNom(string $nom): self
     {
-        $this->Nom = $Nom;
+        $this->nom = $nom;
 
         return $this;
     }
 
     public function getDescription(): ?string
     {
-        return $this->Description;
+        return $this->description;
     }
 
-    public function setDescription(string $Description): self
+    public function setDescription(string $description): self
     {
-        $this->Description = $Description;
+        $this->description = $description;
 
         return $this;
     }
 
     public function getAdresse(): ?string
     {
-        return $this->Adresse;
+        return $this->adresse;
     }
 
-    public function setAdresse(string $Adresse): self
+    public function setAdresse(string $adresse): self
     {
-        $this->Adresse = $Adresse;
+        $this->adresse = $adresse;
 
         return $this;
     }
 
     public function getSiteWeb(): ?string
     {
-        return $this->SiteWeb;
+        return $this->siteWeb;
     }
 
-    public function setSiteWeb(string $SiteWeb): self
+    public function setSiteWeb(string $siteWeb): self
     {
-        $this->SiteWeb = $SiteWeb;
+        $this->siteWeb = $siteWeb;
 
         return $this;
     }
