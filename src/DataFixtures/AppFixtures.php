@@ -36,6 +36,19 @@ class AppFixtures extends Fixture
         /*********************************
          * ***Création des Entreprises ****
         **********************************/
+
+        for($i=0;$i<=10;$i++){
+            $entreprise = new Entreprise();
+            $entreprise -> setNom($faker->company());
+            $entreprise -> setDescription($faker->realText($maxNbChars = 255, $indexSize = 2));
+            $entreprise -> setAdresse($faker->address());
+            $entreprise -> setSiteWeb($faker->url());
+            $manager->persist($entreprise);
+        }
+
+        /*******************************************************************
+         * ***Création des Stages et entreprises / formations associées ****
+        *******************************************************************/
         $manager->flush();
     }
 }
