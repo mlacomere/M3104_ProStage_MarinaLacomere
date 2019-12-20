@@ -3,15 +3,26 @@
 
 {% block titre %}<H1>Entreprises ayant proposées un stage</H1>{% endblock %}
 {% block contenu %}
+{% set compteur = 1 %}
+{% for entreprise in lesEntreprises %}
 <div class="card border-info mb-3">
   <div class="row no-gutters">
     <div class="col-md-4">
+      {%if compteur == 1 %}
       <img src="/img/ent1.png"  width=25% margin-left="25px">
+      {% set compteur = 2 %}
+      {% elseif compteur == 2 %}
+      <img src="/img/ent2.png"  width=25% margin-left="25px">
+      {% set compteur = 3 %}
+      {% else %}
+      <img src="/img/ent3.png"  width=25% margin-left="25px">
+      {% set compteur = 1 %}
+      {% endif %}
     </div>
     <div class="col-md-4">
       <div class="card-body">
-        <h5 class="card-title">Entreprise X</h5>
-        <p class="card-text">SAS multimédia</p>
+        <h5 class="card-title">{{entreprise.nom}}</h5>
+        <p class="card-text">{{entreprise.description}}</p>
       </div>
     </div>
     <div class="col-md-4">
@@ -22,44 +33,5 @@
     </div>
   </div>
 </div>
-
-<div class="card border-info mb-3">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="/img/ent2.png"  width=25% margin-left="25px">
-          </div>
-          <div class="col-md-4">
-            <div class="card-body">
-              <h5 class="card-title">Entreprise Y</h5>
-              <p class="card-text">SARL Communication</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-              <div class="card-body">
-                <br/>
-                <a href="/stages" class="btn btn-primary">Consulter les offres</a>
-              </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card border-info mb-3">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="/img/ent3.png"  width=25% margin-left="25px">
-              </div>
-              <div class="col-md-4">
-                <div class="card-body">
-                  <h5 class="card-title">Entreprise z</h5>
-                  <p class="card-text">Editeur de logiciel</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                  <div class="card-body">
-                    <br/>
-                    <a href="/stages" class="btn btn-primary">Consulter les offres</a>
-                  </div>
-              </div>
-            </div>
-          </div>
+{% endfor %}
 {% endblock %}

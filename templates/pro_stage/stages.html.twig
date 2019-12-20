@@ -3,63 +3,32 @@
 {% block titre %}<H1>Nos stages : </H1>{% endblock %}
 
 {% block contenu %}
+{% for stage in lesStages %}
 <div class="card border-info mb-3">
   <div class="row no-gutters">
     <div class="col-md-4">
+      {% if stage.formations[0].nom == "DUT Informatique" %}
       <img src="/img/bulleInfo.png"  width=25% >
+      {% elseif stage.formations[0].nom == "DUT TIC" %}
+      <img src="/img/bulleLicencePro.png"  width=25% >
+      {%else %}
+      <img src="/img/bulleDUT.png"  width=25% >
+      {% endif %}
     </div>
     <div class="col-md-4">
       <div class="card-body">
-        <h5 class="card-title">Stage A</h5>
-        <p class="card-text">Entreprise X, Poste M</p>
+        <h5 class="card-title">{{stage.titre}}</h5>
+        <p class="card-text">{{stage.entreprise.nom}} - {{stage.entreprise.description}}</p>
       </div>
     </div>
     <div class="col-md-4">
         <div class="card-body">
           <br/>
-          <a href="/stage/35" class="btn btn-primary">Voir l'offre de stage</a>
+          <a href="{{path('proStage_stages',{id:stage.id})}}" class="btn btn-primary">Voir l'offre de stage</a>
         </div>
     </div>
   </div>
 </div>
+{% endfor %}
 
-<div class="card border-info mb-3">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="/img/bulleDUT.png"  width=25%>
-          </div>
-          <div class="col-md-4">
-            <div class="card-body">
-              <h5 class="card-title">Stage B</h5>
-              <p class="card-text">Entreprise Z, Poste N</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-              <div class="card-body">
-                <br/>
-                <a href="/stage/34" class="btn btn-primary">Voir l'offre de stage</a>
-              </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card border-info mb-3">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="/img/bulleInfo.png"  width=25% >
-              </div>
-              <div class="col-md-4">
-                <div class="card-body">
-                  <h5 class="card-title">Stage c</h5>
-                  <p class="card-text">Entreprise X, Poste P</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                  <div class="card-body">
-                    <br/>
-                    <a href="/stage/33" class="btn btn-primary">Voir l'offre de stage</a>
-                  </div>
-              </div>
-            </div>
-          </div>
 {% endblock %}

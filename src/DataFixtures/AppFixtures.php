@@ -66,14 +66,13 @@ class AppFixtures extends Fixture
             $stage -> setEntreprise($ent);
             //modification au niveau de l'entreprise
             $ent -> addStage($stage);
-            //génération d'un nombre aléatoire entre 1 et 3 pour le nombre de formations liées à ce stage
-            $nbForm=$faker->numberBetween($min = 1, $max = 3);
-            for($j=1; $j<=$nbForm; $j++ ){
-                $stage -> addFormation($tableauFormations[$j-1]);
-                $tableauFormations[$j-1]->addStage($stage);
-                $manager->persist($tableauFormations[$j-1]);
-            }
+            //génération d'un nombre aléatoire entre 1 et 3 pour la formation liée à ce stage
+            $nbForm=$faker->numberBetween($min = 0, $max = 2);
             
+            $stage -> addFormation($tableauFormations[$nbForm]);
+            $tableauFormations[$nbForm]->addStage($stage);
+            
+            $manager->persist($tableauFormations[$nbForm]);
             $manager->persist($stage);
             $manager->persist($ent);
             
