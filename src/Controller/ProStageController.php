@@ -47,7 +47,12 @@ class ProStageController extends AbstractController
      */
     public function messageStage($id)
     {
-        return $this->render('pro_stage/stage.html.twig',['id'=>$id]);
+        //récupérer le répository
+        $repositoryStage = $this->getDoctrine()->getRepository(Stage::class);
+        //Récupérer le stage
+        $stage = $repositoryStage->find($id);
+        //envoyer le stage à la vue
+        return $this->render('pro_stage/stage.html.twig',['stage'=>$stage]);
     }
     /**
      * @Route("/stages", name="proStage_stages")
