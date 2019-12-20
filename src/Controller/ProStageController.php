@@ -55,4 +55,16 @@ class ProStageController extends AbstractController
         //envoyer à la vue
         return $this->render('pro_stage/stages.html.twig',['lesStages'=>$stages]);
     }
+     /**
+     * @Route("/stages/{idEntreprise}", name="proStage_stages_entreprise")
+     */
+    public function messageStagesEnt($idEntreprise)
+    {   
+        //récupérer le répository
+        $repositoryStage = $this->getDoctrine()->getRepository(Stage::class);
+        //Récupérer les stages de l'entreprise
+        $stages = $repositoryStage->findByEntreprise($idEntreprise);
+        //envoyer à la vue
+        return $this->render('pro_stage/stages.html.twig',['lesStages'=>$stages]);
+    }
 }
