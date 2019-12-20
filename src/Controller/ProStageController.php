@@ -7,6 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use App\Entity\Stage;
 use App\Entity\Entreprise;
+use App\Entity\Formation;
 
 class ProStageController extends AbstractController
 {
@@ -34,7 +35,12 @@ class ProStageController extends AbstractController
      */
     public function messageFormations()
     {
-        return $this->render('pro_stage/formations.html.twig');
+        //récupérer le répository
+        $repositoryFormation = $this->getDoctrine()->getRepository(Formation::class);
+        //Récupérer les formations
+        $formations = $repositoryFormation->findAll();
+        //envoyer à la vue
+        return $this->render('pro_stage/formations.html.twig',['lesFormations'=>$formations]);
     }
     /**
      * @Route("/stage/{id}", name="proStage_stage")
@@ -56,7 +62,7 @@ class ProStageController extends AbstractController
         return $this->render('pro_stage/stages.html.twig',['lesStages'=>$stages]);
     }
      /**
-     * @Route("/stages/{idEntreprise}", name="proStage_stages_entreprise")
+     * @Route("/stages/entreprise/{idEntreprise}", name="proStage_stages_entreprise")
      */
     public function messageStagesEnt($idEntreprise)
     {   
@@ -64,6 +70,19 @@ class ProStageController extends AbstractController
         $repositoryStage = $this->getDoctrine()->getRepository(Stage::class);
         //Récupérer les stages de l'entreprise
         $stages = $repositoryStage->findByEntreprise($idEntreprise);
+        //envoyer à la vue
+        return $this->render('pro_stage/stages.html.twig',['lesStages'=>$stages]);
+    }
+    /**
+     * @Route("/stages/formation/{idFormation}", name="proStage_stages_formation")
+     */
+    public function messageStagesForm($idFormation)
+    {   
+        //récupérer la formation
+        $repositoryFormation = $this->getDoctrine()->getRepository(Formation::class);
+        $formation = $repositoryFormation->find($idFormation);
+        //récupérer les stages de cette formation
+        $stages = $formation->getStages();
         //envoyer à la vue
         return $this->render('pro_stage/stages.html.twig',['lesStages'=>$stages]);
     }

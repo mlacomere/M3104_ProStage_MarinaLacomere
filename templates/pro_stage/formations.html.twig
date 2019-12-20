@@ -4,15 +4,21 @@
 {% block contenu %}
 <div class="container-fluid">
     <div class="row">
+        {% for formation in lesFormations %}
+        {% if formation.nom == "DUT Informatique" %}
         <div class="col-md-3 offset-1" style="margin-top:150px;">
-            <a href="/stages"><img src="/img/bulleInfo.png" width=75%></a>
+            <a href="{{path('proStage_stages_formation',{idFormation:formation.id})}}"><img src="/img/bulleInfo.png" width=75%></a>
         </div>
+        {% elseif formation.nom == "DUT TIC" %}
         <div class="col-md-3 offset-1" style="margin-top:150px;">
-            <a href="/stages"><img src="/img/bulleLicencePro.png" width=75%></a>
+            <a href="{{path('proStage_stages_formation',{idFormation:formation.id})}}"><img src="/img/bulleLicencePro.png" width=75%></a>
         </div>
+        {%else %}
         <div class="col-md-3 offset-1" style="margin-top:150px;">
-            <a href="/stages"><img src="/img/bulleDUT.png" width=75%></a>
+            <a href="{{path('proStage_stages_formation',{idFormation:formation.id})}}"><img src="/img/bulleDUT.png" width=75%></a>
         </div>
+        {% endif %}
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
