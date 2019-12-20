@@ -5,6 +5,9 @@
 {% block contenu %}
 {% set compteur = 1 %}
 {% for entreprise in lesEntreprises %}
+{%if entreprise.stages is empty %}
+{# Je ne fais rien #}
+{% else %}
 <div class="card border-info mb-3">
   <div class="row no-gutters">
     <div class="col-md-4">
@@ -33,5 +36,6 @@
     </div>
   </div>
 </div>
+{% endif %}
 {% endfor %}
 {% endblock %}
